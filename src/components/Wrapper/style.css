@@ -1,0 +1,13 @@
+.wrapper {
+  
+  display: flex;
+  min-height: 80%;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  width: 90%;
+  margin: 0 auto;
+}

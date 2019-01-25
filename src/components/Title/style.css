@@ -1,0 +1,44 @@
+header {
+  background: darkgrey;
+  min-height: 70px;
+  position: fixed;
+  padding: 5px;
+  width: 100%;
+  color: #000;
+  text-align: center;
+  box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+  z-index: 99;
+  white-space: nowrap;
+  
+}
+
+/* .navbar {
+  background: blue;
+  min-height: 70px;
+  position: fixed;
+  padding: 5px;
+  width: 100%;
+  color: #fff;
+  font-size: 1.5em;
+  z-index: 99;
+  white-space: nowrap;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 25px 5px;
+    width: 50%;
+    text-align: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 900;
+} */
+
