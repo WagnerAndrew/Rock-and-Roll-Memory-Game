@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/[your-user-name].github.io/WagnerAndy/click-mem-game/precache-manifest.f47b52e60d6d7ada0d2388bf712b5789.js"
+  "/click-mem-game/precache-manifest.0be05fbca9955aa9963da879fde6c758.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/[your-user-name].github.io/WagnerAndy/click-mem-game/index.html", {
+workbox.routing.registerNavigationRoute("/click-mem-game/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

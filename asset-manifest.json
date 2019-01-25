@@ -1,13 +1,13 @@
 {
-  "main.css": "/[your-user-name].github.io/WagnerAndy/click-mem-game/static/css/main.f06f07a2.chunk.css",
-  "main.js": "/[your-user-name].github.io/WagnerAndy/click-mem-game/static/js/main.3ca152ad.chunk.js",
-  "main.js.map": "/[your-user-name].github.io/WagnerAndy/click-mem-game/static/js/main.3ca152ad.chunk.js.map",
-  "static/js/1.fa92c112.chunk.js": "/[your-user-name].github.io/WagnerAndy/click-mem-game/static/js/1.fa92c112.chunk.js",
-  "static/js/1.fa92c112.chunk.js.map": "/[your-user-name].github.io/WagnerAndy/click-mem-game/static/js/1.fa92c112.chunk.js.map",
-  "runtime~main.js": "/[your-user-name].github.io/WagnerAndy/click-mem-game/static/js/runtime~main.4e758fd0.js",
-  "runtime~main.js.map": "/[your-user-name].github.io/WagnerAndy/click-mem-game/static/js/runtime~main.4e758fd0.js.map",
-  "static/css/main.f06f07a2.chunk.css.map": "/[your-user-name].github.io/WagnerAndy/click-mem-game/static/css/main.f06f07a2.chunk.css.map",
-  "index.html": "/[your-user-name].github.io/WagnerAndy/click-mem-game/index.html",
-  "precache-manifest.f47b52e60d6d7ada0d2388bf712b5789.js": "/[your-user-name].github.io/WagnerAndy/click-mem-game/precache-manifest.f47b52e60d6d7ada0d2388bf712b5789.js",
-  "service-worker.js": "/[your-user-name].github.io/WagnerAndy/click-mem-game/service-worker.js"
+  "main.css": "/click-mem-game/static/css/main.f06f07a2.chunk.css",
+  "main.js": "/click-mem-game/static/js/main.3ca152ad.chunk.js",
+  "main.js.map": "/click-mem-game/static/js/main.3ca152ad.chunk.js.map",
+  "static/js/1.fa92c112.chunk.js": "/click-mem-game/static/js/1.fa92c112.chunk.js",
+  "static/js/1.fa92c112.chunk.js.map": "/click-mem-game/static/js/1.fa92c112.chunk.js.map",
+  "runtime~main.js": "/click-mem-game/static/js/runtime~main.c2281c3c.js",
+  "runtime~main.js.map": "/click-mem-game/static/js/runtime~main.c2281c3c.js.map",
+  "static/css/main.f06f07a2.chunk.css.map": "/click-mem-game/static/css/main.f06f07a2.chunk.css.map",
+  "index.html": "/click-mem-game/index.html",
+  "precache-manifest.0be05fbca9955aa9963da879fde6c758.js": "/click-mem-game/precache-manifest.0be05fbca9955aa9963da879fde6c758.js",
+  "service-worker.js": "/click-mem-game/service-worker.js"
 }
