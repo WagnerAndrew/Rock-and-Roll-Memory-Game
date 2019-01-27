@@ -1,38 +1,67 @@
 import React, { Component } from "react";
-import FriendCard from "./components/FriendCard";
-import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
-import friends from "./friends.json";
+// import Image from "./components/Image";
+import images from "./images.json";
+import "./App.css";
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
   state = {
-    friends
+    images,
+    score: 0,
+    topScore: 0,
+    picked: false
+
+  };
+ 
+  imgPick = event=> {
+
+    const type = event.target.attributes.getNamedItem('data-type').value;
+    console.log ("Type is: ", type)
+
+    if (type === "false") {
+      
+      this.setState({
+        // picked: true,
+        score: this.state.score + 1,
+        topScore: this.state.topScore + 1
+      })
+    } else {
+      this.setState({
+        score: 0
+      })
+    }
   };
 
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
-  };
-
-  // Map over this.state.friends and render a FriendCard component for each friend object
+ 
   render() {
-    return [
-      <Title/>,
-      <Wrapper>
-        
-        {this.state.friends.map(friend => (
-          <FriendCard
-            removeFriend={this.removeFriend}
-            id={friend.id}
-            key={friend.id}
-            image={friend.image}
-          />
-        ))}
-      </Wrapper>
-    ];
+    return (
+      <>
+        <header>
+          <h2 className="text-wrap">Click a Rock & Roll Hall of Famer to begin... But don't click them twice!</h2>
+          <h3 className="text-wrap">Score {this.state.score} | Top Score: {this.state.topScore}</h3>
+        </header>
+
+        <div className="wrapper">
+
+          {this.state.images.map(image => (
+
+            <div className="card">
+              <div className="img-container">
+                <img
+                  id={image.id}
+                  key={image.id}
+                  alt={image.name}
+                  src={image.image}
+                  data-type={this.state.picked}
+                  onClick={this.imgPick}
+                />
+              </div>
+            </div>
+
+          ))}
+
+        </div>
+      </>
+    )
   }
 }
 
