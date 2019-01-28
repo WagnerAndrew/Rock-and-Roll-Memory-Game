@@ -11,13 +11,11 @@ class Container extends Component {
     };
 
     componentDidMount() {
-        this.imgShuffle(images);
+        this.imgShuffle(this.state.images);
     }
     
 
     imgPick = id => {
-        console.log("ID is: ", id)
-
         let correctGuess = false;
 
         const images = this.state.images.map(image => {
@@ -43,16 +41,22 @@ class Container extends Component {
                 topScore: newTopScore
             })
         } else if (correctGuess === false) {
-
-            this.state.images.map(image => image.picked = false);
-
-            this.setState({
-                images: this.imgShuffle(images),
-                score: 0
-            })
-
-            
-
+            const images = this.state.images.map(image => {
+                const imgCopy = { ...image }
+    
+                
+                    if (imgCopy.picked === true) {
+                        imgCopy.picked = false
+                    }
+                
+                return imgCopy
+            }
+            );
+    
+                this.setState({
+                    images: this.imgShuffle(images),
+                    score: 0,
+                })
         }
     };
 
