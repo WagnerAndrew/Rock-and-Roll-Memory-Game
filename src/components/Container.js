@@ -10,7 +10,12 @@ class Container extends Component {
         topScore: 0,
     };
 
-imgPick = id => {
+    componentDidMount() {
+        this.imgShuffle(images);
+    }
+    
+
+    imgPick = id => {
         console.log("ID is: ", id)
 
         let correctGuess = false;
@@ -28,43 +33,41 @@ imgPick = id => {
         }
         );
         if (correctGuess === true) {
-            const {topScore, score} = this.state
+            const { topScore, score } = this.state
             let newScore = score + 1;
             let newTopScore = Math.max(newScore, topScore)
 
-            this.setState({ 
+            this.setState({
                 images: this.imgShuffle(images),
                 score: newScore,
-                topScore: newTopScore            
+                topScore: newTopScore
             })
         } else if (correctGuess === false) {
-            this.setState({ score: 0 })
-        }
 
-        
-};
+            this.state.images.map(image => image.picked = false);
 
-imgShuffle = imgCopy => {
+            this.setState({
+                images: this.imgShuffle(images),
+                score: 0
+            })
 
-            // var j, x, i;
-            // for (i = imgCopy.length - 1; i > 0; i--) {
-            //     j = Math.floor(Math.random() * (i + 1));
-            //     x = imgCopy[i];
-            //     imgCopy[i] = imgCopy[j];
-            //     imgCopy[j] = x;
-         
-                for (let i = imgCopy.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [imgCopy[i], imgCopy[j]] = [imgCopy[j], imgCopy[i]];
-                }
-               
             
 
+        }
+    };
 
+    // imgPickReset = imgPickReset => {
+    //     imgPickReset.map(image =>  { image.picked = false } ) return imgPickReset}
 
-            return imgCopy;
-        
-}
+    imgShuffle = imgShuffle => {
+        for (let i = imgShuffle.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [imgShuffle[i], imgShuffle[j]] = [imgShuffle[j], imgShuffle[i]];
+        }
+
+        return imgShuffle
+    };
+
 
     render() {
         return (
