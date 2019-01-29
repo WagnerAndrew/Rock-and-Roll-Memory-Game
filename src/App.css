@@ -1,15 +1,15 @@
 * {
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: Helvetica;
   }
 
 header {
-    background: darkgrey;
+    background: #0094d5;
     min-height: 70px;
     position: fixed;
     padding: 5px;
     width: 100%;
-    color: #000;
+    color: #1c3775;
     text-align: center;
     box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
     z-index: 99;
@@ -19,7 +19,7 @@ header {
 
 
 .card {
-    background: #fff;
+    background: #da6254;
     border-radius: 2px;
     height: 225px;
     margin: 1rem;

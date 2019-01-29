@@ -6,6 +6,7 @@ import images from "./images.json";
 class Container extends Component {
     state = {
         images,
+        title: "Click a Rock & Roll Hall of Famer to begin... But don't click them twice!",
         score: 0,
         topScore: 0,
     };
@@ -37,6 +38,7 @@ class Container extends Component {
 
             this.setState({
                 images: this.imgShuffle(images),
+                title: "Good guess!",
                 score: newScore,
                 topScore: newTopScore
             })
@@ -55,6 +57,7 @@ class Container extends Component {
     
                 this.setState({
                     images: this.imgShuffle(images),
+                    title: "You already picked that rocker! Back to zero...",
                     score: 0,
                 })
         }
@@ -76,7 +79,7 @@ class Container extends Component {
     render() {
         return (
             <>
-                <Header score={this.state.score} topScore={this.state.topScore} />
+                <Header title={this.state.title} score={this.state.score} topScore={this.state.topScore} />
                 <div className="wrapper">
                     <ImageCard
                         results={this.state.images}
