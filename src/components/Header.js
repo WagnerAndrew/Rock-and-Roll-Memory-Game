@@ -2,9 +2,17 @@ import React from "react";
 
 function Header(props) {
     return (
-        <header>
-            <h2 className="text-wrap">{props.title}</h2>
-            <h3 className="text-wrap">Score {props.score} | Top Score: {props.topScore}</h3>
+        <header className="text-white">
+            <div className="row">
+                <div className="col-sm-8 text-wrap d-flex justify-content-center">
+                    <h5>{props.title}</h5>
+                </div>
+                <div className="col-sm-4 text-wrap d-flex justify-content-center">
+                    <h5>SCORE {props.score} | TOP SCORE: {props.topScore}</h5>
+                </div>
+            
+            </div>
+
         </header>
     );
 }

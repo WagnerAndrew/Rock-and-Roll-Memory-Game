@@ -6,15 +6,27 @@ import images from "./images.json";
 class Container extends Component {
     state = {
         images,
-        title: "Click a Rock & Roll Hall of Famer to begin... But don't click them twice!",
+        title: "CLICK A ROCK & ROLL HALL OF FAMER TO BEGIN... BUT DON'T CLICK THEM TWICE!",
         score: 0,
-        topScore: 0,
+        topScore: 0
     };
 
     componentDidMount() {
         this.imgShuffle(this.state.images);
     }
-    
+
+    titleCorrect() {
+
+        setTimeout(() => {
+            this.setState({
+                title: ""
+            })
+                ;
+        }, 1000);
+
+    }
+
+
 
     imgPick = id => {
         let correctGuess = false;
@@ -31,6 +43,7 @@ class Container extends Component {
             return imgCopy
         }
         );
+
         if (correctGuess === true) {
             const { topScore, score } = this.state
             let newScore = score + 1;
@@ -38,33 +51,57 @@ class Container extends Component {
 
             this.setState({
                 images: this.imgShuffle(images),
-                title: "Good guess!",
                 score: newScore,
-                topScore: newTopScore
-            })
+                topScore: newTopScore,
+                title: "GOOD GUESS!",
+            }, () => {
+                    this.titleCorrect()
+                })
+
         } else if (correctGuess === false) {
             const images = this.state.images.map(image => {
                 const imgCopy = { ...image }
-    
-                
-                    if (imgCopy.picked === true) {
-                        imgCopy.picked = false
-                    }
-                
+
+
+                if (imgCopy.picked === true) {
+                    imgCopy.picked = false
+                }
+
                 return imgCopy
             }
             );
-    
-                this.setState({
-                    images: this.imgShuffle(images),
-                    title: "You already picked that rocker! Back to zero...",
-                    score: 0,
-                })
-        }
-    };
 
-    // imgPickReset = imgPickReset => {
-    //     imgPickReset.map(image =>  { image.picked = false } ) return imgPickReset}
+            this.setState({
+                images: this.imgShuffle(images),
+                title: "YOU ALREADY PICKED THAT ROCKER! BACK TO ZERO - CLICK AGAIN",
+                score: 0,
+            })
+        }
+
+        if (this.state.topScore === 11) {
+
+            const images = this.state.images.map(image => {
+                const imgCopy = { ...image }
+
+
+                if (imgCopy.picked === true) {
+                    imgCopy.picked = false
+                }
+
+                return imgCopy
+            }
+            );
+
+            this.setState({
+                images: this.imgShuffle(images),
+                title: "YOU GOT THEM ALL! CLICK TO PLAY AGAIN!",
+                score: 0,
+                topScore: 0
+            })
+        }
+
+
+    };
 
     imgShuffle = imgShuffle => {
         for (let i = imgShuffle.length - 1; i > 0; i--) {
@@ -81,10 +118,13 @@ class Container extends Component {
             <>
                 <Header title={this.state.title} score={this.state.score} topScore={this.state.topScore} />
                 <div className="wrapper">
-                    <ImageCard
-                        results={this.state.images}
-                        imgPick={this.imgPick}
-                    />
+
+
+                            <ImageCard
+                                results={this.state.images}
+                                imgPick={this.imgPick}
+                            />
+
                 </div>
             </>
         );
