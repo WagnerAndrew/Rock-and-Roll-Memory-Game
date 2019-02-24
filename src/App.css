@@ -1,9 +1,6 @@
-* {
-    box-sizing: border-box;
-    font-family: 'Coda Caption', sans-serif;
-  }
 
 header {
+    font-family: 'Coda Caption', sans-serif;
     background: #0094d5;
     min-height: 70px;
     position: fixed;
